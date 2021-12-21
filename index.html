@@ -1,0 +1,624 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>KrosseKrabbe - Reservierung</title>
+	<link href="virtualRestaurant_styles.css" rel="stylesheet" type="text/css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<h1 class="KK-restaurantName">KrosseKrabbe</h1>
+	<h2 class="KK-subTitle">Reservierung</h2>
+
+	<div class="KK-inputContainer">
+		<div class="KK-inputGroup">
+			<label for="reservationTime">Zeit:</label>
+			<input type="datetime-local" name="reservationTime" id="reservationTime" class="KK-input">
+		</div>
+		<div class="KK-inputGroup">
+			<label for="personNumber">Personen:</label>
+			<input type="range" name="personNumber" id="personNumber" min="1" max="10" value="2" step="1" class="KK-input">
+			<span class="KK-rangeValue" id="personNumberValue"></span>
+		</div>
+	  
+	
+
+
+
+	</div>
+
+	<div id="virtualRestaurant" class="virtualRestaurantContainer" ondragstart="return false">
+		<div class="background">
+			<img src="images/background.png" alt="">
+		</div>
+
+		<!-- left room -->
+		<div id="table_1" table-number=1 class="zweier table not-available" draggable="false" style="left: 5%; top: 2.79%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_2" table-number=2 class="zweier table selected" style="left: 14.33%; top: 2.79%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_3" table-number=3 class="zweier table" style="left: 23.67%; top: 2.79%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_4" table-number=4 class="zweier table" style="left: 33%; top: 2.79%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_5" table-number=5 class="zweier table" style="left: 2.5%; top: 14.29%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_6" table-number=6 class="zweier table" style="left: 2.5%; top: 28.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_7" table-number=7 class="zweier table" style="left: 2.5%; top: 42.86%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_8" table-number=8 class="vierer table" style="left: 20.06%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_9" table-number=9 class="vierer table" style="left: 33.72%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_10" table-number=10 class="vierer table" style="left: 20.06%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_11" table-number=11 class="vierer table" style="left: 33.72%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_12" table-number=12 class="zweier table" style="left: 22.33%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_13" table-number=13 class="zweier table" style="left: 32.67%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<!-- right room  -->
+		<div class="bar" style="left: 54%; top: 2.79%">
+			<div class="stuhl-1">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="stuhl-5">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="stuhl-6">
+				<img src="images/Hocker.png" alt="">
+			</div>
+			<div class="tresen">
+				<img src="images/Tresen.png" alt="">
+			</div>
+			<div class="tresenVert">
+				<img src="images/Tresen_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_14" table-number=14 class="vierer table" style="left: 42.44%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_15" table-number=15 class="vierer table" style="left: 56.11%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_16" table-number=16 class="vierer table" style="left: 75.22%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_17" table-number=17 class="vierer table" style="left: 88.89%; top: 26.07%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_18" table-number=18 class="vierer table" style="left: 42.44%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_19" table-number=19 class="vierer table" style="left: 56.11%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_20" table-number=20 class="vierer table" style="left: 75.22%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_21" table-number=21 class="vierer table" style="left: 88.89%; top: 40.36%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_22" table-number=22 class="zweier table" style="left: 46.06%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_23" table-number=23 class="zweier table" style="left: 56.39%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_24" table-number=24 class="zweier table" style="left: 76.61%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_25" table-number=25 class="zweier table" style="left: 86.94%; top: 53.93%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<!-- Outdoor -->
+		<div id="table_26" table-number=26 class="zweier table" style="left: 2.17%; top: 68.29%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_27" table-number=27 class="zweier table" style="left: 17.89%; top: 68.29%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_28" table-number=28 class="viererVert table" style="left: 30.33%; top: 65.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_29" table-number=29 class="viererVert table" style="left: 45.17%; top: 65.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_30" table-number=30 class="zweier table" style="left: 58.56%; top: 68.29%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_31" table-number=31 class="viererVert table" style="left: 81.61%; top: 65.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_32" table-number=32 class="zweier table" style="left: 2.17%; top: 82.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_33" table-number=33 class="zweier table" style="left: 17.89%; top: 82.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_34" table-number=34 class="viererVert table" style="left: 30.33%; top: 82.71%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_35" table-number=35 class="viererVert table" style="left: 45.17%; top: 82.71%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_36" table-number=36 class="zweier table" style="left: 58.56%; top: 82.57%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/Tisch.png" alt="">
+			</div>
+		</div>
+
+		<div id="table_37" table-number=37 class="viererVert table" style="left: 81.61%; top: 82.71%;">
+			<div class="stuhl-1">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-2">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-3">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="stuhl-4">
+				<img src="images/Stuhl.png" alt="">
+			</div>
+			<div class="tisch">
+				<img src="images/GrosserTisch_vert.png" alt="">
+			</div>
+		</div>
+
+	</div>
+</body>
+
+<script type="text/javascript" src="index.js"></script>
+
+</html>

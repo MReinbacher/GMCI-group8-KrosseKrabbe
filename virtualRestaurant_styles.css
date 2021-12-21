@@ -1,0 +1,305 @@
+.virtualRestaurantContainer {	
+	position: relative; 
+	display: flex;
+	aspect-ratio: 1800 / 1400;
+	width: 90%;
+	max-width: 1400px;
+	margin: 0 auto;
+	user-select: none;
+	filter: drop-shadow(0 0 0.25rem);
+}
+
+.background {
+	left: 0%; 
+	top: 0%; 
+	position: absolute; 
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+
+.table {
+	z-index: 20;
+}
+
+.table:hover {
+	filter: drop-shadow(0 0 0.5rem yellow);
+}
+
+.not-available{
+	filter: drop-shadow(0 0 0.25rem red);
+	cursor: not-allowed;
+}
+
+.not-available:hover{
+	filter: drop-shadow(0 0 0.5rem red);
+}
+
+.selected{
+	filter: drop-shadow(0 0 0.25rem green);
+}
+
+.selected:hover{
+	filter: drop-shadow(0 0 0.5rem green);
+}
+
+.background img {
+	width: 100%;
+	height: auto;
+}
+
+.vierer {
+	position: absolute;
+	width: 8.5%;
+	height: 8.79%;
+}
+
+.viererVert {
+	position: absolute;
+	width: 6.83%;
+	height: 10.93%;
+}
+
+.zweier {
+	position: absolute;
+	width: 6.83%;
+	height: 5.21%;
+}
+
+.zweierVert {
+	position: absolute;
+	width: 4.06%;
+	height: 8.79%;
+}
+
+.bar {
+	position: absolute;
+	width: 31.83%;
+	height: 13.57%;
+}
+
+.table img {
+	width: 100%;
+	height: auto;
+}
+
+.bar img {
+	width: 100%;
+	height: auto;
+}
+
+.vierer .stuhl-1 {
+	left: 9.8%; 
+	top: 0%; 
+	position: absolute; 
+	width: 34.64%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.vierer .stuhl-2 {
+	left: 55.56%; 
+	top: 0%; 
+	position: absolute; 
+	width: 34.64%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.vierer .stuhl-3 {
+	left: 9.8%; 
+	top: 56.91%; 
+	position: absolute; 
+	width: 34.64%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.vierer .stuhl-4 {
+	left: 55.56%; 
+	top: 56.91%; 
+	position: absolute; 
+	width: 34.64%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.vierer .tisch {
+	left: 0%; 
+	top: 20.33%; 
+	position: absolute; 
+	width: 100%;
+	height: 59.35%;
+	z-index:12;
+}
+
+.viererVert .stuhl-1 {
+	left: 0%; 
+	top: 9.8%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 34.64%;
+	z-index:11;
+}
+
+.viererVert .stuhl-2 {
+	left: 56.91%; 
+	top: 9.8%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 34.64%;
+	z-index:11;
+}
+
+.viererVert .stuhl-3 {
+	left: 0%; 
+	top: 55.56%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 34.64%;
+	z-index:11;
+}
+
+.viererVert .stuhl-4 {
+	left: 56.91%; 
+	top: 55.56%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 34.64%;
+	z-index:11;
+}
+
+.viererVert .tisch {
+	left: 20.33%; 
+	top: 0%; 
+	position: absolute; 
+	width: 59.35%;
+	height: 100%;
+	z-index:12;
+}
+
+.zweier .stuhl-1 {
+	left: 0%; 
+	top: 13.7%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 72.6%;
+	z-index:11;
+}
+
+.zweier .stuhl-2 {
+	left: 56.91%; 
+	top: 13.7%; 
+	position: absolute; 
+	width: 43.09%;
+	height: 72.6%;
+	z-index:11;
+}
+
+.zweier .tisch {
+	left: 20.33%;  
+	top: 0%;
+	position: absolute; 
+	width: 59.35%;
+	height: 100%;
+	z-index:12;
+}
+
+.zweierVert .stuhl-1 {
+	left: 13.7%; 
+	top: 0%; 
+	position: absolute; 
+	width: 72.6%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.zweierVert .stuhl-2 {
+	left: 13.7%; 
+	top: 56.91%; 
+	position: absolute; 
+	width: 72.6%;
+	height: 43.09%;
+	z-index:11;
+}
+
+.zweierVert .tisch {
+	left: 0%; 
+	top: 20.33%; 
+	position: absolute; 
+	width: 100%;
+	height: 59.35%;
+	z-index:12;
+}
+
+.bar .stuhl-1 {
+	left: 8.38%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .stuhl-2 {
+	left: 23.21%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .stuhl-3 {
+	left: 38.05%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .stuhl-4 {
+	left: 52.88%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .stuhl-5 {
+	left: 67.71%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .stuhl-6 {
+	left: 82.55%; 
+	top: 72.11%; 
+	position: absolute; 
+	width: 9.25%;
+	height: 27.89%;
+	z-index:11;
+}
+
+.bar .tresen {
+	left: 0%; 
+	top: 48.95%; 
+	position: absolute; 
+	width: 100%;
+	height: 33.16%;
+	z-index:12;
+}
+
+.bar .tresenVert {
+	left: 89.00%; 
+	top: 0%; 
+	position: absolute; 
+	width: 10.99%;
+	height: 82.11%;
+	z-index:12;
+}
