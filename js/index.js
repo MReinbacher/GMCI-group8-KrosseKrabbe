@@ -2,7 +2,7 @@
 //  do things on load
 document.addEventListener("DOMContentLoaded", function () {
     sliderValueOnInput();
-    
+
     // Elements
     const tables = document.getElementsByClassName("table");
 
@@ -15,10 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Event functions
-function sliderValueOnInput() {
-    var personNumberRange = document.getElementById("personNumber");
+function sliderValueOnInput(event) {
     var personNumberValue = document.getElementById("personNumberValue");
-    personNumberValue.innerHTML = personNumberRange.value;
+    if (event) {
+        personNumberValue.innerHTML = this.value;
+    } else {
+        personNumberValue.innerHTML = document.getElementById("personNumber").value;
+    }
 };
 
 function onClickHandlerTable(event) {
