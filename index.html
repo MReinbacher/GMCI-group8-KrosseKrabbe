@@ -16,13 +16,21 @@
 		<span id="general" style="display: block;">
 			<div class="KK-inputContainer">
 				<div class="KK-inputGroup">
-					<label for="reservationTime">Zeit:</label>
-					<input type="datetime-local" name="reservationTime" id="reservationTime" class="KK-input">
+					<div class="KK-inputGroup-left">
+						<label for="reservationTime">Zeit:</label>
+					</div>
+					<div class="KK-inputGroup-right">
+						<input type="datetime-local" name="reservationTime" id="reservationTime" class="KK-input">
+					</div>
 				</div>
-				<div class="KK-inputGroup">
-					<label for="personNumber">Personen:</label>
-					<input type="range" name="personNumber" id="personNumber" min="1" max="10" value="2" step="1" class="KK-input">
-					<span class="KK-rangeValue" id="personNumberValue"></span>
+				<div class="KK-inputGroup">	
+					<div class="KK-inputGroup-left">
+						<label for="personNumber">Personen:</label>
+					</div>
+					<div class="KK-inputGroup-right">
+						<input type="range" name="personNumber" id="personNumber" min="1" max="10" value="2" step="1" class="KK-input">
+						<span class="KK-rangeValue" id="personNumberValue"></span>
+					</div>
 				</div>
 			</div>
 
@@ -621,7 +629,32 @@
 		</span>
 
 		<span id="contactDetails" style="display:none">
-			contact
+			<div class="KK-inputContainer">
+				<div class="KK-inputGroup">
+					<div class="KK-inputGroup-left">
+						<label for="customerEmail">E-Mail*:</label>
+					</div>
+					<div class="KK-inputGroup-right">
+						<input type="text" name="customerEmail" id="customerEmail" class="KK-input" placeholder="example@domain.de" required>
+					</div>
+				</div>
+				<div class="KK-inputGroup">
+					<div class="KK-inputGroup-left">
+						<label for="customerTel">Telefonnummer:</label>
+					</div>
+					<div class="KK-inputGroup-right">
+						<input type="number" name="customerTel" id="customerTel" class="KK-input no-arrow" placeholder="+49123456789">
+					</div>
+				</div>
+				<div class="KK-inputGroup">
+					<div class="KK-inputGroup-left">
+						<label for="customerName">Name:</label>
+					</div>
+					<div class="KK-inputGroup-right">
+						<input type="number" name="customerName" id="customerName" class="KK-input no-arrow" placeholder="Geben Sie hier ihren Namen ein">
+					</div>
+				</div>
+			</div>
 		</span>
 
 		<span id="complete" style="display:none">
@@ -630,11 +663,9 @@
 
 	</form>
 
-	<div id="navigationContainer" class="KK-inputContainer">
-		<div id="navigation" class="KK-inputGroup">
-			<button id="backButton" class="KK-button KK-navigationButton" disabled>Zurück</button>
-			<button id="forwardButton" class="KK-button KK-navigationButton">Weiter</button>
-		</div>
+	<div id="navigationContainer" class="KK-navigation">
+		<button id="backButton" class="KK-button KK-navigationButton" disabled>Zurück</button>
+		<button id="forwardButton" class="KK-button KK-navigationButton">Weiter</button>
 	</div>
 </body>
 
