@@ -1,3 +1,10 @@
+// Constants
+const PAGE_IDS = ["general", "menu", "contactDetails", "complete"];
+const PAGE_SUBTITLES = ["Reservierung", "Menü", "Kontaktdetails", "Reservierung abgeschlossen"];
+
+// State variables
+var currentPage = 0;
+
 
 //  do things on load
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,6 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let item of tables) {
         item.onclick = onClickHandlerTable;
     }
+    document.getElementById("backButton").onclick = onClickHandlerNavigation;
+    document.getElementById("forwardButton").onclick = onClickHandlerNavigation;
 
 });
 
@@ -36,4 +45,25 @@ function onClickHandlerTable(event) {
         }
         target.classList.add("selected");
     }
+}
+
+function onClickHandlerNavigation(event) {
+    let nextPage;
+    if (event.currentTarget.id == "forwardButton") {
+        nextPage = currentPage + 1;
+        if (nextPage >= PAGE_IDS.length - 1) {
+            event.currentTarget.disabled = true;
+        }
+        document.getElementById("backButton").disabled = false;
+    } else {
+        nextPage = currentPage - 1;
+        if (nextPage <= 0) {
+            event.currentTarget.disabled = true;
+        }
+        document.getElementById("forwardButton").disabled = false;
+    }
+    document.getElementById(PAGE_IDS[currentPage]).style.display = "none";
+    document.getElementById(PAGE_IDS[nextPage]).style.display = "block";
+    document.getElementById("subtitle").innerText = PAGE_SUBTITLES[nextPage];
+    currentPage = nextPage;
 }

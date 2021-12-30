@@ -114,7 +114,7 @@ button.KK-button {
     outline: none;
 }
 
-button.KK-button:hover {
+button.KK-button:hover:enabled {
     background-color: white;
     border: 2px solid  var(--main--color);
     color: var(--main--color);
@@ -122,9 +122,14 @@ button.KK-button:hover {
     transform: translateY(-4px);
 }
 
-button.KK-button:active {
+button.KK-button:active:enabled {
     box-shadow: 0 5px 9px var(--main--color-shadow);
     transition: .1s;
+}
+
+button.KK-button:disabled {
+    cursor: not-allowed;
+    background-color: var(--main--color-shadow);
 }
 
 button.KK-navigationButton {
