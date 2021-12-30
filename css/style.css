@@ -31,6 +31,7 @@ body {
     justify-content: center;
     margin-bottom: 15px;
     margin-top: 15px;
+    flex-basis: 100%;
 }
 
 .KK-inputGroup {
@@ -125,6 +126,7 @@ button.KK-button {
     transition: .3s ease-in-out;
     cursor: pointer;
     outline: none;
+    user-select: none;
 }
 
 button.KK-button:hover:enabled {
@@ -169,4 +171,58 @@ display: none;
 .no-arrow::-webkit-inner-spin-button {
 -webkit-appearance: none;
 margin: 0;
+}
+
+.KK-menuItem {
+    display: flex;
+    align-items: flex-end;
+    font-size: 2rem;
+    width: 90%;
+    margin-top: 5px;
+}
+
+.KK-menuItem-food {
+}
+
+.KK-menuItem-seperator {
+    flex-grow:1;
+    border-bottom:dotted 2px black;
+    margin-bottom: 5px;
+}
+
+.KK-menuItem-price {
+}
+
+.KK-menuItem-addRemove {
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+}
+
+.KK-menuItem-addRemove span {
+    min-width: 3ch;
+    text-align: center;
+}
+
+.KK-menuItem-addRemove .KK-button-plus, .KK-menuItem-addRemove .KK-button-minus {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    width: 2ch;
+    font-size: 2rem;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.KK-menuItem-addRemove .KK-button-plus:disabled, .KK-menuItem-addRemove .KK-button-minus:disabled {
+    cursor: not-allowed;
+    background-color: var(--main--color-shadow);
+}
+
+.KK-pageContainer {
+    display: none;
+    flex-flow: row wrap;
+    justify-content: center;
 }

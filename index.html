@@ -13,7 +13,7 @@
 	<h2 id="subtitle" class="KK-subTitle">Reservierung</h2>
 
 	<form action="">
-		<span id="general" style="display: block;">
+		<span id="general" class="KK-pageContainer">
 			<div class="KK-inputContainer">
 				<div class="KK-inputGroup">
 					<div class="KK-inputGroup-left">
@@ -624,11 +624,30 @@
 			</div>
 		</span>
 
-		<span id="menu" style="display:none">
-			menu
+		<span id="menu" class="KK-pageContainer">
+			<div class="KK-menuItem">
+				<div class="KK-menuItem-food">Food</div>
+				<div class="KK-menuItem-seperator"></div>
+				<div class="KK-menuItem-price">15€</div>
+				<div class="KK-menuItem-addRemove">
+					<button type="button" class="KK-button-minus">&minus;</button>
+					<span>1</span>
+					<button type="button" class="KK-button-plus">&plus;</button>
+				</div>
+			</div>
+			<div class="KK-menuItem">
+				<div class="KK-menuItem-food">Food2</div>
+				<div class="KK-menuItem-seperator"></div>
+				<div class="KK-menuItem-price">125€</div>
+				<div class="KK-menuItem-addRemove">
+					<button type="button" class="KK-button-minus">&minus;</button>
+					<span>12</span>
+					<button type="button" class="KK-button-plus">&plus;</button>
+				</div>
+			</div>
 		</span>
 
-		<span id="contactDetails" style="display:none">
+		<span id="contactDetails" class="KK-pageContainer">
 			<div class="KK-inputContainer">
 				<div class="KK-inputGroup">
 					<div class="KK-inputGroup-left">
@@ -657,15 +676,15 @@
 			</div>
 		</span>
 
-		<span id="complete" style="display:none">
+		<span id="complete" class="KK-pageContainer">
 			complete
 		</span>
 
 	</form>
 
 	<div id="navigationContainer" class="KK-navigation">
-		<button id="backButton" class="KK-button KK-navigationButton" disabled>Zurück</button>
-		<button id="forwardButton" class="KK-button KK-navigationButton">Weiter</button>
+		<button type="button" id="backButton" class="KK-button KK-navigationButton" disabled>Zurück</button>
+		<button type="button" id="forwardButton" class="KK-button KK-navigationButton">Weiter</button>
 	</div>
 </body>
 
