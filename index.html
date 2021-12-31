@@ -625,25 +625,34 @@
 		</span>
 
 		<span id="menu" class="KK-pageContainer">
-			<div class="KK-menuItem">
-				<div class="KK-menuItem-food">Food</div>
+			<div id="foodBurger" class="KK-menuItem">
+				<div class="KK-menuItem-food">Krabbenburger</div>
 				<div class="KK-menuItem-seperator"></div>
-				<div class="KK-menuItem-price">15€</div>
+				<div class="KK-menuItem-price"></div>
 				<div class="KK-menuItem-addRemove">
-					<button type="button" class="KK-button-minus">&minus;</button>
-					<span>1</span>
+					<button type="button" class="KK-button-minus" disabled>&minus;</button>
+					<span>0</span>
 					<button type="button" class="KK-button-plus">&plus;</button>
+				</div>
+				<div class="KK-menuItem-additionalInformation">
+					Zubereitet nach der originalen geheimen Geheimformel
 				</div>
 			</div>
-			<div class="KK-menuItem">
-				<div class="KK-menuItem-food">Food2</div>
+			<div id="foodPizza" class="KK-menuItem">
+				<div class="KK-menuItem-food">KrosseKrabbePizza</div>
 				<div class="KK-menuItem-seperator"></div>
-				<div class="KK-menuItem-price">125€</div>
+				<div class="KK-menuItem-price"></div>
 				<div class="KK-menuItem-addRemove">
-					<button type="button" class="KK-button-minus">&minus;</button>
-					<span>12</span>
+					<button type="button" class="KK-button-minus" disabled>&minus;</button>
+					<span>0</span>
 					<button type="button" class="KK-button-plus">&plus;</button>
 				</div>
+				<div class="KK-menuItem-additionalInformation">
+					&bdquo;ist die Pizza, so knusprig&ldquo;
+				</div>
+			</div>
+			<div class="KK-totalPriceContainer">
+				<div id="totalPrice" class="KK-totalPrice"></div>
 			</div>
 		</span>
 
@@ -670,7 +679,7 @@
 						<label for="customerName">Name:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="number" name="customerName" id="customerName" class="KK-input no-arrow" placeholder="Geben Sie hier ihren Namen ein">
+						<input type="number" name="customerName" id="customerName" class="KK-input no-arrow" placeholder="Geben Sie hier Ihren Namen ein">
 					</div>
 				</div>
 			</div>
@@ -679,6 +688,8 @@
 		<span id="complete" class="KK-pageContainer">
 			complete
 		</span>
+
+		<div class="KK-placeholder-100px"></div>
 
 	</form>
 

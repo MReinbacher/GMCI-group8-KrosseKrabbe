@@ -148,13 +148,17 @@ button.KK-button:disabled {
 }
 
 .KK-navigation {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: inherit;
+    padding: 5px;
     display: flex; 
     flex-direction: row;
     column-gap: 15px;
     align-items: center;
     font-size: 2rem;
     justify-content: center;
-    padding: 15px;
 }
 
 button.KK-navigationButton {
@@ -175,9 +179,11 @@ margin: 0;
 
 .KK-menuItem {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     font-size: 2rem;
-    width: 90%;
+    width: 70%;
+    min-width: 500px;
     margin-top: 5px;
 }
 
@@ -204,25 +210,102 @@ margin: 0;
     text-align: center;
 }
 
+.KK-menuItem-additionalInformation {
+    flex-basis: 100%;
+    font-size: 1.5rem;
+    padding-left: 5%;
+    padding-right: 60%;
+    
+}
+
+.KK-totalPriceContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-end;
+    font-size: 2rem;
+    width: 70%;
+    min-width: 500px;
+    margin-top: 5px;
+}
+
+.KK-totalPrice {
+    display: none;
+    width: 11ch;
+    text-align: end;
+    padding: 5px;
+    padding-right: 15px;
+    border-top: 3px double black;
+}
+
 .KK-menuItem-addRemove .KK-button-plus, .KK-menuItem-addRemove .KK-button-minus {
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     border-radius: 10px;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-    width: 2ch;
-    font-size: 2rem;
+    width: 2.5ch;
+    font-size: 1.5rem;
     transition: .3s ease-in-out;
     cursor: pointer;
     outline: none;
     user-select: none;
+    color: white;
 }
 
 .KK-menuItem-addRemove .KK-button-plus:disabled, .KK-menuItem-addRemove .KK-button-minus:disabled {
     cursor: not-allowed;
-    background-color: var(--main--color-shadow);
+}
+
+.KK-menuItem-addRemove .KK-button-plus {
+    background-color: #008000;
+}
+
+.KK-menuItem-addRemove .KK-button-plus:disabled {
+    background-color: #00800060;
+}
+
+.KK-menuItem-addRemove .KK-button-minus {
+    background-color: #ff0000;
+}
+
+.KK-menuItem-addRemove .KK-button-minus:disabled {
+    background-color: #ff000060;
+}
+
+.KK-menuItem-addRemove .KK-button-plus:hover:enabled {
+    color: #008000;
+    background-color: white;
+    border-color: #008000;
+    box-shadow: 0 5px 9px #00800060;
+    transform: translateY(-2px);
+}
+
+.KK-menuItem-addRemove .KK-button-minus:hover:enabled {
+    color: #ff0000;
+    background-color: white;
+    border-color: #ff0000;
+    box-shadow: 0 5px 9px #ff000060;
+    transform: translateY(-2px);
+}
+
+.KK-menuItem-addRemove .KK-button-plus:active:enabled {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);;
+    transform: none;
+    transition: .1s;
+}
+
+.KK-menuItem-addRemove .KK-button-minus:active:enabled {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);;
+    transform: none;
+    transition: .1s;
 }
 
 .KK-pageContainer {
     display: none;
     flex-flow: row wrap;
     justify-content: center;
+}
+
+.KK-placeholder-100px {
+    width: 100%;
+    height: 100px;
 }

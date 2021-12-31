@@ -1,9 +1,14 @@
 // Constants
 const PAGE_IDS = ["general", "menu", "contactDetails", "complete"];
 const PAGE_SUBTITLES = ["Reservierung", "Menü", "Kontaktdetails", "Reservierung abgeschlossen"];
+const FOOD = ["foodBurger", "foodPizza"];
+const FOOD_PRICE = { "foodBurger": 10, "foodPizza": 15 };
+
+const EURO = "\u20AC"
 
 // State variables
-var currentPage = 1;
+var currentPage = 0;
+var shoppingCart = Object.create(null);
 
 
 //  do things on load
@@ -18,10 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.getElementById("backButton").onclick = onClickHandlerNavigation;
     document.getElementById("forwardButton").onclick = onClickHandlerNavigation;
-
-    // Initialization
+    for (let item of FOOD) {
+        document.getElementById(item).getElementsByClassName("KK-button-minus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, -1); });
+        document.getElementById(item).getElementsByClassName("KK-button-plus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, +1); });
+    }
     sliderValueOnInput();
     goToPage(currentPage);
+    initShoppingCart();
+    initPrices();
 });
 
 // Functions
@@ -30,6 +39,50 @@ function goToPage(page) {
     document.getElementById(PAGE_IDS[page]).style.display = "flex";
     document.getElementById("subtitle").innerText = PAGE_SUBTITLES[page];
     currentPage = page;
+}
+
+function initShoppingCart() {
+    for (let item of FOOD) {
+        shoppingCart[item] = 0;
+    }
+}
+
+function initPrices() {
+    for (let item of FOOD) {
+        document.getElementById(item).getElementsByClassName("KK-menuItem-price")[0].innerText = FOOD_PRICE[item] + " " + EURO;   
+    }
+}
+
+function updateShoppingCart(item, amount) {
+    shoppingCart[item] += amount;
+    if (shoppingCart[item] <= 0) shoppingCart[item] = 0;
+}
+
+function updateMenuPage(foodId) {
+    let item = document.getElementById(foodId);
+    let minusButton = item.getElementsByClassName("KK-button-minus")[0];
+    let valueField = item.getElementsByTagName("span")[0];
+
+    if (shoppingCart[foodId] <= 0) {
+        minusButton.disabled = true;
+    } else {
+        minusButton.disabled = false;
+    }
+    valueField.innerText = shoppingCart[foodId];
+
+    let totalPrice = 0;
+    for (let item of FOOD) {
+        totalPrice += shoppingCart[item] * FOOD_PRICE[item];
+    }
+
+    let totalPriceElement = document.getElementById("totalPrice");
+    if (totalPrice > 0) {
+        totalPriceElement.style.display = "block";
+        totalPriceElement.innerText = totalPrice + " " + EURO;
+    }
+    else {
+        totalPriceElement.style.display = "none";
+    }
 }
 
 // Event functions
@@ -72,4 +125,9 @@ function onClickHandlerNavigation(event) {
         document.getElementById("forwardButton").disabled = false;
     }
     goToPage(nextPage);
+}
+
+function onClickHandlerMenuButton(foodId, amount) {
+    updateShoppingCart(foodId, amount);
+    updateMenuPage(foodId);
 }
