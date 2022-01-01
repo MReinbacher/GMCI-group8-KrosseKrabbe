@@ -27,6 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById(item).getElementsByClassName("KK-button-minus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, -1); });
         document.getElementById(item).getElementsByClassName("KK-button-plus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, +1); });
     }
+    for (let item of document.getElementsByClassName("KK-collapse-button")) {
+        item.onclick = onClickHandlerCollapsible;
+    }
+
+    // Initialization
     sliderValueOnInput();
     goToPage(currentPage);
     initShoppingCart();
@@ -49,7 +54,7 @@ function initShoppingCart() {
 
 function initPrices() {
     for (let item of FOOD) {
-        document.getElementById(item).getElementsByClassName("KK-menuItem-price")[0].innerText = FOOD_PRICE[item] + " " + EURO;   
+        document.getElementById(item).getElementsByClassName("KK-menuItem-price")[0].innerText = FOOD_PRICE[item] + " " + EURO;
     }
 }
 
@@ -114,15 +119,26 @@ function onClickHandlerNavigation(event) {
     if (event.currentTarget.id == "forwardButton") {
         nextPage = currentPage + 1;
         if (nextPage >= PAGE_IDS.length - 1) {
-            event.currentTarget.disabled = true;
+            //TODO add finish screen
+            event.currentTarget.style.visibility = "hidden";
+            document.getElementById("backButton").style.visibility = "hidden";
         }
-        document.getElementById("backButton").disabled = false;
+        else {
+            if (nextPage >= PAGE_IDS.length - 2) {
+                // event.currentTarget.disabled = true;
+                event.currentTarget.innerText = "Reservierung abschließen";
+            }
+            // document.getElementById("backButton").disabled = false;
+            document.getElementById("backButton").style.visibility = "visible";
+        }
     } else {
         nextPage = currentPage - 1;
         if (nextPage <= 0) {
-            event.currentTarget.disabled = true;
+            // event.currentTarget.disabled = true;
+            event.currentTarget.style.visibility = "hidden";
         }
-        document.getElementById("forwardButton").disabled = false;
+        // document.getElementById("forwardButton").disabled = false;
+        document.getElementById("forwardButton").innerText = "Weiter";
     }
     goToPage(nextPage);
 }
@@ -130,4 +146,10 @@ function onClickHandlerNavigation(event) {
 function onClickHandlerMenuButton(foodId, amount) {
     updateShoppingCart(foodId, amount);
     updateMenuPage(foodId);
+}
+
+function onClickHandlerCollapsible(event) {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    content.classList.toggle("active");
 }

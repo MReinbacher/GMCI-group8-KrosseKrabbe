@@ -2,7 +2,7 @@
 	position: relative; 
 	display: flex;
 	aspect-ratio: 1800 / 1400;
-	width: 90%;
+	width: 100%;
 	max-width: 1400px;
 	margin: 0 auto;
 	user-select: none;
