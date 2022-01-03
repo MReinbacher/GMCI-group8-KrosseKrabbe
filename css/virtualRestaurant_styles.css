@@ -26,6 +26,10 @@
 	filter: drop-shadow(0 0 0.5rem yellow);
 }
 
+.highlight {
+	filter: drop-shadow(0 0 0.25rem yellow);
+}
+
 .not-available{
 	filter: drop-shadow(0 0 0.25rem red);
 	cursor: not-allowed;
@@ -303,3 +307,200 @@
 	height: 82.11%;
 	z-index:12;
 }
+
+
+/* Table positions */
+#table_1 {
+	left: 5%; 
+	top: 2.79%;
+}
+
+#table_2 {
+	left: 14.33%; 
+	top: 2.79%;
+}
+
+#table_3 {
+	left: 23.67%; 
+	top: 2.79%;
+}
+
+#table_4 {
+	left: 33%; 
+	top: 2.79%;
+}
+
+#table_5 {
+	left: 2.5%; 
+	top: 14.29%;
+}
+
+#table_6 {
+	left: 2.5%;
+	top: 28.57%;
+}
+
+#table_7 {
+	left: 2.5%; 
+	top: 42.86%;
+}
+
+#table_8 {
+	left: 20.06%; 
+	top: 26.07%;
+}
+
+#table_9 {
+	left: 33.72%; 
+	top: 26.07%;
+}
+
+#table_10 {
+	left: 20.06%; 
+	top: 40.36%;
+}
+
+#table_11 {
+	left: 33.72%; 
+	top: 40.36%;
+}
+
+#table_12 {
+	left: 22.33%; 
+	top: 53.93%;
+}
+
+#table_13 {
+	left: 32.67%; 
+	top: 53.93%;
+}
+
+#bar {
+	left: 54%; 
+	top: 2.79%	
+}
+
+#table_14 {
+	left: 42.44%; 
+	top: 26.07%;
+}
+
+#table_15 {
+	left: 56.11%; 
+	top: 26.07%;
+}
+
+#table_16 {
+	left: 75.22%; 
+	top: 26.07%;
+}
+
+#table_17 {
+	left: 88.89%; 
+	top: 26.07%;
+}
+
+#table_18 {
+	left: 42.44%; 
+	top: 40.36%;
+}
+
+#table_19 {
+	left: 56.11%; 
+	top: 40.36%;
+}
+
+#table_20 {
+	left: 75.22%; 
+	top: 40.36%;
+}
+
+#table_21 {
+	left: 88.89%; 
+	top: 40.36%;
+}
+
+#table_22 {
+	left: 46.06%; 
+	top: 53.93%;
+}
+
+#table_23 {
+	left: 56.39%; 
+	top: 53.93%;	
+}
+
+#table_24 {
+	left: 76.61%; 
+	top: 53.93%;
+}
+
+#table_25 {
+	left: 86.94%; 
+	top: 53.93%;
+}
+
+#table_26 {
+	left: 2.17%; 
+	top: 68.29%;
+}
+
+#table_27 {
+	left: 17.89%; 
+	top: 68.29%;
+}
+
+#table_28 {
+	left: 30.33%; 
+	top: 65.57%;
+}
+
+#table_29 {
+	left: 45.17%; 
+	top: 65.57%;
+}
+
+#table_30 {
+	left: 58.56%; 
+	top: 68.29%;
+}
+
+#table_31 {
+	left: 81.61%; 
+	top: 65.57%;
+}
+
+#table_32 {
+	left: 2.17%; 
+	top: 82.57%;
+}
+
+#table_33 {
+	left: 17.89%; 
+	top: 82.57%;
+}
+
+#table_34 {
+	left: 30.33%; 
+	top: 82.71%;
+}
+
+#table_35 {
+	left: 45.17%; 
+	top: 82.71%;
+}
+
+#table_36 {
+	left: 58.56%; 
+	top: 82.57%;
+}
+
+#table_37 {
+	left: 81.61%; 
+	top: 82.71%;
+}
+
+
+
+
+
