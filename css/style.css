@@ -380,3 +380,8 @@ margin: 0;
     padding: 18px !important;
     max-height: none !important;
 }
+
+.KK-text {
+    font-size: 2rem;
+    text-align: center;
+}

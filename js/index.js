@@ -235,9 +235,9 @@ function onClickHandlerNavigation(event) {
     if (event.currentTarget.id == "forwardButton") {
         nextPage = currentPage + 1;
         if (nextPage >= PAGE_IDS.length - 1) {
-            //TODO add finish screen
             event.currentTarget.style.visibility = "hidden";
             document.getElementById("backButton").style.visibility = "hidden";
+            customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value;
         }
         else {
             if (nextPage >= PAGE_IDS.length - 2) {
