@@ -6,6 +6,8 @@ const FOOD_PRICE = { "foodBurger": 10, "foodPizza": 15 };
 
 const EURO = "\u20AC"
 
+const OCCUPIED_TABLES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
 // State variables
 var tables;
 var currentPage = 0;
@@ -162,7 +164,7 @@ function arangeTables(table1, table2, arange = false) {
 }
 
 function resetTables() {
-    for (table of tables) {
+    for (let table of tables) {
         table.classList.remove("selected");
         table.classList.remove("highlight");
         table.attributeStyleMap.clear();
@@ -170,7 +172,7 @@ function resetTables() {
 }
 
 function highlightTables(inputTable) {
-    for (table of tables) {
+    for (let table of tables) {
         table.classList.remove("highlight");
         if (inputTable != null) {
             if (arangeTables(inputTable, table)) {
@@ -179,6 +181,18 @@ function highlightTables(inputTable) {
                 }
             }
         }
+    }
+}
+
+function deactivateUnavailableTables(tables) {
+    var disabledTables = document.getElementsByClassName("not-available");
+    while(disabledTables.length > 0) {
+        disabledTables[0].classList.remove("not-available");
+    }
+    if(document.getElementById("reservationTime").value == "") return;  
+    for(let tableNumber of tables) {
+        let id = "table_" + tableNumber;
+        document.getElementById(id)?.classList.add("not-available");
     }
 }
 
@@ -272,5 +286,5 @@ function onClickHandlerCollapsible(event) {
 
 function onInputHandlerTime(event) {
     resetTables();
-    //TODO mark unavailable tables
+    deactivateUnavailableTables(OCCUPIED_TABLES);
 }
