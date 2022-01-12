@@ -104,7 +104,7 @@ input[type="range"].KK-input::-webkit-slider-thumb:active {
     border-right-color: var(--main--color);
 }
 
-input[type=datetime-local].KK-input, input[type=text].KK-input, input[type=number].KK-input {
+input[type=datetime-local].KK-input, input[type=text].KK-input, input[type=number].KK-input, input[type=date].KK-input {
     border: 1px solid #ccc;
     box-shadow: inset 0 1px 3px #ddd;
     border-radius: 4px;
@@ -381,4 +381,23 @@ margin: 0;
 .KK-text {
     font-size: 2rem;
     text-align: center;
+}
+
+.KK-table {
+    width: 70%; 
+    text-align: center;
+    border-collapse: collapse;
+}
+
+.KK-tableHeader {
+    font-size: 2rem;
+    border-bottom: 2px solid black;
+}
+
+.KK-tableContent {
+    font-size: 1.5rem;
+}
+
+tr .KK-button {
+    padding: 3px 7px;
 }
