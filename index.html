@@ -1,26 +1,26 @@
 <!DOCTYPE html
-	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="de" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>KrosseKrabbe - Reservierung</title>
-	<link href="css/virtualRestaurant_styles.css" rel="stylesheet" type="text/css">
-	<link href="css/style.css" rel="stylesheet" type="text/css">
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>KrosseKrabbe - Reservierung</title>
+    <link href="css/virtualRestaurant_styles.css" rel="stylesheet" type="text/css">
+    <link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-	<h1 id="title" class="KK-restaurantName">KrosseKrabbe</h1>
-	<h2 id="subtitle" class="KK-subTitle">Reservierung</h2>
+<h1 class="KK-restaurantName" id="title">KrosseKrabbe</h1>
+<h2 class="KK-subTitle" id="subtitle">Reservierung</h2>
 
-	<form action="">
-		<span id="general" class="KK-pageContainer">
+<form action="">
+		<span class="KK-pageContainer" id="general">
 			<div class="KK-inputContainer">
 				<div class="KK-inputGroup">
 					<div class="KK-inputGroup-left">
 						<label for="reservationTime">Zeit:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="datetime-local" name="reservationTime" id="reservationTime" class="KK-input">
+						<input class="KK-input" id="reservationTime" name="reservationTime" type="datetime-local">
 					</div>
 				</div>
 				<div class="KK-inputGroup">	
@@ -28,645 +28,90 @@
 						<label for="personNumber">Personen:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="range" name="personNumber" id="personNumber" min="1" max="10" value="2" step="1" class="KK-input">
+						<input class="KK-input" id="personNumber" max="10" min="1" name="personNumber" step="1" type="range"
+                               value="2">
 						<span class="KK-rangeValue" id="personNumberValue"></span>
 					</div>
 				</div>
 			</div>
-			<button type="button" class="KK-collapse-button">Ich möchte einen Tisch auswählen</button>
+			<button class="KK-collapse-button" type="button">Ich möchte einen Tisch auswählen</button>
 			<div class="KK-collapse-content">
-				<div id="virtualRestaurant" class="virtualRestaurantContainer" ondragstart="return false">
+				<div class="virtualRestaurantContainer" id="virtualRestaurant" ondragstart="return false">
 					<div class="background">
-						<img src="img/background.png" alt="">
+						<img alt="" src="img/background.png">
 					</div>
-
-					<!-- left room -->
-					<div id="table_1" table-number=1 class="zweier table" draggable="false">
+					<div class="bar" id="bar">
 						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_2" table-number=2 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_3" table-number=3 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_4" table-number=4 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_5" table-number=5 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_6" table-number=6 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_7" table-number=7 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_8" table-number=8 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_9" table-number=9 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_10" table-number=10 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_11" table-number=11 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_12" table-number=12 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_13" table-number=13 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<!-- right room  -->
-					<div id="bar" class="bar">
-						<div class="stuhl-1">
-							<img src="img/Hocker.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Hocker.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Hocker.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Hocker.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="stuhl-5">
-							<img src="img/Hocker.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="stuhl-6">
-							<img src="img/Hocker.png" alt="">
+							<img alt="" src="img/Hocker.png">
 						</div>
 						<div class="tresen">
-							<img src="img/Tresen.png" alt="">
+							<img alt="" src="img/Tresen.png">
 						</div>
 						<div class="tresenVert">
-							<img src="img/Tresen_vert.png" alt="">
+							<img alt="" src="img/Tresen_vert.png">
 						</div>
 					</div>
-
-					<div id="table_14" table-number=14 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_15" table-number=15 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_16" table-number=16 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_17" table-number=17 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_18" table-number=18 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_19" table-number=19 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_20" table-number=20 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_21" table-number=21 class="vierer table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_22" table-number=22 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_23" table-number=23 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_24" table-number=24 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_25" table-number=25 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<!-- Outdoor -->
-					<div id="table_26" table-number=26 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_27" table-number=27 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_28" table-number=28 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_29" table-number=29 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_30" table-number=30 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_31" table-number=31 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_32" table-number=32 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_33" table-number=33 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_34" table-number=34 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_35" table-number=35 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_36" table-number=36 class="zweier table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/Tisch.png" alt="">
-						</div>
-					</div>
-
-					<div id="table_37" table-number=37 class="viererVert table">
-						<div class="stuhl-1">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-2">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-3">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="stuhl-4">
-							<img src="img/Stuhl.png" alt="">
-						</div>
-						<div class="tisch">
-							<img src="img/GrosserTisch_vert.png" alt="">
-						</div>
-					</div>
-
 				</div>
 			</div>
 			
 		</span>
 
-		<span id="menu" class="KK-pageContainer">
-			<div id="foodBurger" class="KK-menuItem">
+    <span class="KK-pageContainer" id="menu">
+			<div class="KK-menuItem" id="foodBurger">
 				<div class="KK-menuItem-food">Krabbenburger</div>
 				<div class="KK-menuItem-seperator"></div>
 				<div class="KK-menuItem-price"></div>
 				<div class="KK-menuItem-addRemove">
-					<button type="button" class="KK-button-minus" disabled>&minus;</button>
+					<button class="KK-button-minus" disabled type="button">&minus;</button>
 					<span>0</span>
-					<button type="button" class="KK-button-plus">&plus;</button>
+					<button class="KK-button-plus" type="button">&plus;</button>
 				</div>
 				<div class="KK-menuItem-additionalInformation">
 					Zubereitet nach der originalen geheimen Geheimformel
 				</div>
 			</div>
-			<div id="foodPizza" class="KK-menuItem">
+			<div class="KK-menuItem" id="foodPizza">
 				<div class="KK-menuItem-food">KrosseKrabbePizza</div>
 				<div class="KK-menuItem-seperator"></div>
 				<div class="KK-menuItem-price"></div>
 				<div class="KK-menuItem-addRemove">
-					<button type="button" class="KK-button-minus" disabled>&minus;</button>
+					<button class="KK-button-minus" disabled type="button">&minus;</button>
 					<span>0</span>
-					<button type="button" class="KK-button-plus">&plus;</button>
+					<button class="KK-button-plus" type="button">&plus;</button>
 				</div>
 				<div class="KK-menuItem-additionalInformation">
 					&bdquo;ist die Pizza, so knusprig&ldquo;
 				</div>
 			</div>
 			<div class="KK-totalPriceContainer">
-				<div id="totalPrice" class="KK-totalPrice"></div>
+				<div class="KK-totalPrice" id="totalPrice"></div>
 			</div>
 		</span>
 
-		<span id="contactDetails" class="KK-pageContainer">
+    <span class="KK-pageContainer" id="contactDetails">
 			<div class="KK-inputContainer">
 				<div class="KK-inputGroup">
 					<div class="KK-inputGroup-left">
 						<label for="customerEmail">E-Mail*:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="text" name="customerEmail" id="customerEmail" class="KK-input" placeholder="example@domain.de" required>
+						<input class="KK-input" id="customerEmail" name="customerEmail" placeholder="example@domain.de"
+                               required type="text">
 					</div>
 				</div>
 				<div class="KK-inputGroup">
@@ -674,7 +119,8 @@
 						<label for="customerTel">Telefonnummer:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="number" name="customerTel" id="customerTel" class="KK-input no-arrow" placeholder="+49123456789">
+						<input class="KK-input no-arrow" id="customerTel" name="customerTel" placeholder="+49123456789"
+                               type="number">
 					</div>
 				</div>
 				<div class="KK-inputGroup">
@@ -682,13 +128,14 @@
 						<label for="customerName">Name:</label>
 					</div>
 					<div class="KK-inputGroup-right">
-						<input type="text" name="customerName" id="customerName" class="KK-input no-arrow" placeholder="Geben Sie hier Ihren Namen ein">
+						<input class="KK-input no-arrow" id="customerName" name="customerName" placeholder="Geben Sie hier Ihren Namen ein"
+                               type="text">
 					</div>
 				</div>
 			</div>
 		</span>
 
-		<span id="complete" class="KK-pageContainer">
+    <span class="KK-pageContainer" id="complete">
 			<div class="KK-text">
 				Vielen Dank für Ihre Reservierung! <br>
 				In Kürze erhalten Sie eine Bestätigung per E-Mail an: <br>
@@ -696,20 +143,21 @@
 			</div>
 		</span>
 
-		<div class="KK-placeholder-100px"></div>
+    <div class="KK-placeholder-100px"></div>
 
-	</form>
+</form>
 
-	<div id="navigationContainer" class="KK-navigation">
-		<div class="KK-navigationButton-containerLeft">
-			<button type="button" id="backButton" class="KK-button KK-navigationButton" style="visibility: hidden;">Zurück</button>
-		</div>
-		<div class="KK-navigationButton-containerRight">
-			<button type="button" id="forwardButton" class="KK-button KK-navigationButton">Weiter</button>
-		</div>
-	</div>
+<div class="KK-navigation" id="navigationContainer">
+    <div class="KK-navigationButton-containerLeft">
+        <button class="KK-button KK-navigationButton" id="backButton" style="visibility: hidden;" type="button">Zurück
+        </button>
+    </div>
+    <div class="KK-navigationButton-containerRight">
+        <button class="KK-button KK-navigationButton" id="forwardButton" type="button">Weiter</button>
+    </div>
+</div>
 </body>
 
-<script type="text/javascript" src="js/index.js"></script>
+<script src="js/index.js" type="text/javascript"></script>
 
 </html>
