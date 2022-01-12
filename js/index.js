@@ -9,9 +9,9 @@ const EURO = "\u20AC"
 const OCCUPIED_TABLES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 // State variables
-var tables;
-var currentPage = 0;
-var shoppingCart = Object.create(null);
+let tables
+let currentPage = 0
+const shoppingCart = Object.create(null)
 
 
 //  do things on load
@@ -21,17 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Events
     document.getElementById("personNumber").oninput = sliderValueOnInput;
-    for (let item of tables) {
+    for (const item of tables) {
         item.onclick = onClickHandlerTable;
     }
     document.getElementById("backButton").onclick = onClickHandlerNavigation;
     document.getElementById("forwardButton").onclick = onClickHandlerNavigation;
     document.getElementById("reservationTime").oninput = onInputHandlerTime;
-    for (let item of FOOD) {
+    for (const item of FOOD) {
         document.getElementById(item).getElementsByClassName("KK-button-minus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, -1); });
         document.getElementById(item).getElementsByClassName("KK-button-plus")[0].addEventListener("click", function () { onClickHandlerMenuButton(item, +1); });
     }
-    for (let item of document.getElementsByClassName("KK-collapse-button")) {
+    for (const item of document.getElementsByClassName("KK-collapse-button")) {
         item.onclick = onClickHandlerCollapsible;
     }
 
@@ -72,11 +72,7 @@ function updateMenuPage(foodId) {
     let minusButton = item.getElementsByClassName("KK-button-minus")[0];
     let valueField = item.getElementsByTagName("span")[0];
 
-    if (shoppingCart[foodId] <= 0) {
-        minusButton.disabled = true;
-    } else {
-        minusButton.disabled = false;
-    }
+    minusButton.disabled = shoppingCart[foodId] <= 0;
     valueField.innerText = shoppingCart[foodId];
 
     let totalPrice = 0;
@@ -109,19 +105,20 @@ function getPercentagePos(element) {
 }
 
 /**
- * 
+ *
  * @param {HTMLElement} table1
  * @param {HTMLElement} table2
- * 
+ *
+ * @param {boolean} arrange whether to arrange them
  */
-function arangeTables(table1, table2, arange = false) {
+function arrangeTables(table1, table2, arrange = false) {
     let table1pos = getPercentagePos(table1);
     let table2pos = getPercentagePos(table2);
 
     if (!(table1.classList.contains("vierer") || table1.classList.contains("viererVert"))) return false;
     if (!(table2.classList.contains("vierer") || table2.classList.contains("viererVert"))) return false;
 
-    if (table1pos.top > 20 && table1pos.top < 50 && table1pos.top == table2pos.top) { //indoor area
+    if (table1pos.top > 20 && table1pos.top < 50 && table1pos.top === table2pos.top) { //indoor area
         if (table1pos.left > table2pos.left) { //table1 should always be the left table
             let temp = table1;
             table1 = table2;
@@ -133,20 +130,19 @@ function arangeTables(table1, table2, arange = false) {
         if (table2pos.left - table1pos.left < 13 || table2pos.left - table1pos.left > 14) return false; //if not neighbours -> quit
 
         if (table1pos.left > 70 || (table1pos.left < 40 && table1pos.left > 15)) {
-            if (arange) {
+            if (arrange) {
                 table1.style.left = (table2pos.left - table1pos.width) + "%";
             }
             return true;
         } else if (table1pos.left < 70 && table1pos.left > 40) {
-            if (arange) {
+            if (arrange) {
                 table2.style.left = (table1pos.left + table2pos.width) + "%";
             }
             return true;
         }
-    } else if (table1pos.top > 60 && table1pos.top < 90 && table1pos.left == table2pos.left) {
+    } else if (table1pos.top > 60 && table1pos.top < 90 && table1pos.left === table2pos.left) {
         if (table1pos.top > table2pos.top) { //table1 should always be the upper table
             let temp = table1;
-            table1 = table2;
             table2 = temp;
             temp = table1pos;
             table1pos = table2pos;
@@ -155,7 +151,7 @@ function arangeTables(table1, table2, arange = false) {
 
         if (table2pos.top - table1pos.top < 17 || table2pos.left - table1pos.left > 18) return false; //if not neighbours -> quit
 
-        if (arange) {
+        if (arrange) {
             table2.style.top = (table1pos.top + table2pos.height) + "%";
         }
         return true;
@@ -175,7 +171,7 @@ function highlightTables(inputTable) {
     for (let table of tables) {
         table.classList.remove("highlight");
         if (inputTable != null) {
-            if (arangeTables(inputTable, table)) {
+            if (arrangeTables(inputTable, table)) {
                 if (!table.classList.contains("not-available")) {
                     table.classList.add("highlight");
                 }
@@ -189,7 +185,7 @@ function deactivateUnavailableTables(tables) {
     while(disabledTables.length > 0) {
         disabledTables[0].classList.remove("not-available");
     }
-    if(document.getElementById("reservationTime").value == "") return;  
+    if(document.getElementById("reservationTime").value === "") return;
     for(let tableNumber of tables) {
         let id = "table_" + tableNumber;
         document.getElementById(id)?.classList.add("not-available");
@@ -205,7 +201,7 @@ function sliderValueOnInput(event) {
         personNumberValue.innerHTML = document.getElementById("personNumber").value;
     }
     resetTables();
-};
+}
 
 function onClickHandlerTable(event) {
     const target = event.currentTarget;
@@ -219,8 +215,8 @@ function onClickHandlerTable(event) {
             item.attributeStyleMap.clear();
         }
     } else { // select if not selected
-        if (personNumber > 4 && selectedTables.length == 1) {
-            if (!arangeTables(target, selectedTables[0], true)) {
+        if (personNumber > 4 && selectedTables.length === 1) {
+            if (!arrangeTables(target, selectedTables[0], true)) {
                 for (let item of selectedTables) {
                     item.classList.remove("selected");
                     item.attributeStyleMap.clear();
@@ -236,7 +232,7 @@ function onClickHandlerTable(event) {
     }
 
     selectedTables = document.querySelectorAll(".table.selected");
-    if (personNumber > 4 && selectedTables.length == 1) {
+    if (personNumber > 4 && selectedTables.length === 1) {
         highlightTables(selectedTables[0]);
     }
     else {
@@ -246,12 +242,12 @@ function onClickHandlerTable(event) {
 
 function onClickHandlerNavigation(event) {
     let nextPage;
-    if (event.currentTarget.id == "forwardButton") {
+    if (event.currentTarget.id === "forwardButton") {
         nextPage = currentPage + 1;
         if (nextPage >= PAGE_IDS.length - 1) {
             event.currentTarget.style.visibility = "hidden";
             document.getElementById("backButton").style.visibility = "hidden";
-            customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value;
+            customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value; // ???
         }
         else {
             if (nextPage >= PAGE_IDS.length - 2) {
@@ -280,8 +276,7 @@ function onClickHandlerMenuButton(foodId, amount) {
 
 function onClickHandlerCollapsible(event) {
     this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    content.classList.toggle("active");
+    this.nextElementSibling.classList.toggle("active");
 }
 
 function onInputHandlerTime(event) {
