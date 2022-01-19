@@ -399,11 +399,19 @@ function onInputHandlerTime(event) {
 }
 
 function onBlurHandlerCustomerEmail(event) {
-  if (!validateCustomerEmail() && event.currentTarget.value !== "") {
-    alert("Email-Format nicht korrekt\nBeispiel: MaxMustermann@email.de");
-    event.currentTarget.value = "";
+  if (event.currentTarget.value === "") {
+    document.getElementById("forwardButton").disabled = true;
+    event.currentTarget.setCustomValidity("Email-Format nicht korrekt\nBeispiel: MaxMustermann@email.de");
   }
   else {
-    document.getElementById("forwardButton").disabled = false;
+    if (!validateCustomerEmail()) {
+      document.getElementById("forwardButton").disabled = true;
+      alert("Email-Format nicht korrekt\nBeispiel: MaxMustermann@email.de");
+      event.currentTarget.setCustomValidity("Email-Format nicht korrekt\nBeispiel: MaxMustermann@email.de");
+    }
+    else {
+      document.getElementById("forwardButton").disabled = false;
+      event.currentTarget.setCustomValidity('');
+    }
   }
 }

@@ -404,3 +404,7 @@ margin: 0;
 tr .KK-button {
     padding: 3px 7px;
 }
+
+input:invalid {
+    border: 1px solid red !important;
+}
