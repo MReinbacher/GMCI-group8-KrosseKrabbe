@@ -79,7 +79,7 @@ input[type="range"].KK-input::-webkit-slider-thumb {
     transition: .3s ease-in-out;
 }
 
-input[type="range"].KK-input::-webkit-slider-thumb:hover, input[type="range"].KK-input:focus::-webkit-slider-thumb {
+input[type="range"].KK-input::-webkit-slider-thumb:hover, input[type="range"].KK-input:focus-visible::-webkit-slider-thumb {
     background-color: white;
     border: 2px solid  var(--main--color);
 }
@@ -131,7 +131,7 @@ button.KK-button {
     user-select: none;
 }
 
-button.KK-button:hover:enabled, button.KK-button:focus:enabled {
+button.KK-button:hover:enabled, button.KK-button:focus-visible:enabled {
     background-color: white;
     border: 2px solid  var(--main--color);
     color: var(--main--color);
@@ -284,7 +284,7 @@ margin: 0;
     background-color: #ff000060;
 }
 
-.KK-menuItem-addRemove .KK-button-plus:hover:enabled,.KK-menuItem-addRemove .KK-button-plus:focus:enabled {
+.KK-menuItem-addRemove .KK-button-plus:hover:enabled,.KK-menuItem-addRemove .KK-button-plus:focus-visible:enabled {
     color: #008000;
     background-color: white;
     border-color: #008000;
@@ -292,7 +292,7 @@ margin: 0;
     transform: translateY(-2px);
 }
 
-.KK-menuItem-addRemove .KK-button-minus:hover:enabled, .KK-menuItem-addRemove .KK-button-minus:focus:enabled {
+.KK-menuItem-addRemove .KK-button-minus:hover:enabled, .KK-menuItem-addRemove .KK-button-minus:focus-visible:enabled {
     color: #ff0000;
     background-color: white;
     border-color: #ff0000;
@@ -341,7 +341,7 @@ margin: 0;
     background-color: var(--main--color);
 } 
 
-.KK-collapse-button:hover, .KK-collapse-button:focus {
+.KK-collapse-button:hover, .KK-collapse-button:focus-visible {
     /* background-color: var(--main--color-dark); */
     background-color: white;
     color: var(--main--color);
