@@ -120,7 +120,7 @@ function addTableObject(table, imgName) {
   tableObj.classList.add('tisch');
   const tableImage = document.createElement('img');
   tableImage.src = `img/${imgName}.png`;
-  tableImage.alt = `Tisch #${table.getAttribute('table-number')}`;
+  tableImage.alt = `Tisch #${table.getAttribute('table-number')} (${table.classList.contains("not-available") ? 'reserviert' : 'nicht reserviert'})`;
   tableObj.appendChild(tableImage);
   table.appendChild(tableObj);
 }
@@ -286,14 +286,18 @@ function highlightTables(inputTable) {
 }
 
 function deactivateUnavailableTables(tables) {
-  var disabledTables = document.getElementsByClassName("not-available");
+  const disabledTables = document.getElementsByClassName("not-available")
   while (disabledTables.length > 0) {
     disabledTables[0].classList.remove("not-available");
   }
   if (document.getElementById("reservationTime").value === "") return;
   for (let tableNumber of tables) {
     let id = "table_" + tableNumber;
-    document.getElementById(id)?.classList.add("not-available");
+    const table = document.getElementById(id)
+    if (table != null) {
+      table.classList.add("not-available");
+      table.querySelector(".tisch > img").alt = `Tisch #${table.getAttribute('table-number')} (${table.classList.contains("not-available") ? 'reserviert' : 'nicht reserviert'})`;
+    }
   }
 }
 
