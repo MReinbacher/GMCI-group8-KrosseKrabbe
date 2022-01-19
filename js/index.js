@@ -2,7 +2,7 @@
 const PAGE_IDS = ["general", "menu", "contactDetails", "complete"];
 const PAGE_SUBTITLES = ["Reservierung", "Menü", "Kontaktdetails", "Reservierung abgeschlossen"];
 const FOOD = ["foodBurger", "foodPizza"];
-const FOOD_PRICE = {"foodBurger": 10, "foodPizza": 15};
+const FOOD_PRICE = { "foodBurger": 10, "foodPizza": 15 };
 const TABLES = {
   1: 'zweier', // left room
   2: 'zweier',
@@ -79,12 +79,15 @@ document.addEventListener("DOMContentLoaded", function () {
   for (const item of document.getElementsByClassName("KK-collapse-button")) {
     item.onclick = onClickHandlerCollapsible;
   }
+  document.getElementById("customerEmail").onblur = onBlurHandlerCustomerEmail;
 
   // Initialization
   sliderValueOnInput();
   goToPage(currentPage);
   initShoppingCart();
   initPrices();
+  document.getElementById("forwardButton").disabled = true;
+
 });
 
 // Functions
@@ -206,7 +209,7 @@ function getPercentagePos(element) {
   var height = Number(styleMap.get('height').value.toFixed(2));
   var left = Number(styleMap.get('left').value.toFixed(2));
   var top = Number(styleMap.get('top').value.toFixed(2));
-  return {width: width, height: height, left: left, top: top};
+  return { width: width, height: height, left: left, top: top };
 }
 
 /**
@@ -297,6 +300,13 @@ function deactivateUnavailableTables(tables) {
   }
 }
 
+function validateCustomerEmail() {
+  let email = document.getElementById("customerEmail").value;
+  return email.match(
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  );
+}
+
 // Event functions
 function sliderValueOnInput(event) {
   var personNumberValue = document.getElementById("personNumberValue");
@@ -354,7 +364,7 @@ function onClickHandlerNavigation(event) {
       customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value; // ???
     } else {
       if (nextPage >= PAGE_IDS.length - 2) {
-        // event.currentTarget.disabled = true;
+        if (!validateCustomerEmail()) event.currentTarget.disabled = true;
         event.currentTarget.innerText = "Reservierung abschließen";
       }
       // document.getElementById("backButton").disabled = false;
@@ -366,7 +376,7 @@ function onClickHandlerNavigation(event) {
       // event.currentTarget.disabled = true;
       event.currentTarget.style.visibility = "hidden";
     }
-    // document.getElementById("forwardButton").disabled = false;
+    document.getElementById("forwardButton").disabled = false;
     document.getElementById("forwardButton").innerText = "Weiter";
   }
   goToPage(nextPage);
@@ -385,4 +395,15 @@ function onClickHandlerCollapsible(event) {
 function onInputHandlerTime(event) {
   resetTables();
   deactivateUnavailableTables(OCCUPIED_TABLES);
+  document.getElementById("forwardButton").disabled = event.currentTarget.value === "";
+}
+
+function onBlurHandlerCustomerEmail(event) {
+  if (!validateCustomerEmail() && event.currentTarget.value !== "") {
+    alert("Email-Format nicht korrekt\nBeispiel: MaxMustermann@email.de");
+    event.currentTarget.value = "";
+  }
+  else {
+    document.getElementById("forwardButton").disabled = false;
+  }
 }
