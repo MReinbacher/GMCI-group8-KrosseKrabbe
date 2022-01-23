@@ -80,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
     item.onclick = onClickHandlerCollapsible;
   }
   document.getElementById("customerEmail").onblur = onBlurHandlerCustomerEmail;
+  for (let p of PAGE_IDS) {
+    if (p != PAGE_IDS[3]) document.getElementById("navigation-" + p).onclick = onClickHandlerNavigationMenu;
+  }
 
   // Initialization
   sliderValueOnInput();
@@ -87,6 +90,9 @@ document.addEventListener("DOMContentLoaded", function () {
   initShoppingCart();
   initPrices();
   document.getElementById("forwardButton").disabled = true;
+  document.getElementById("navigation-" + PAGE_IDS[1]).disabled = true;
+  document.getElementById("navigation-" + PAGE_IDS[2]).disabled = true;
+
 
 });
 
@@ -95,6 +101,10 @@ function goToPage(page) {
   document.getElementById(PAGE_IDS[currentPage]).style.display = "none";
   document.getElementById(PAGE_IDS[page]).style.display = "flex";
   document.getElementById("subtitle").innerText = PAGE_SUBTITLES[page];
+  for (let p of PAGE_IDS) {
+    if (p != PAGE_IDS[3]) document.getElementById("navigation-" + p).classList.remove("active");
+  }
+  document.getElementById("navigation-" + PAGE_IDS[page]).classList.add("active");
   currentPage = page;
 }
 
@@ -400,6 +410,8 @@ function onInputHandlerTime(event) {
   resetTables();
   deactivateUnavailableTables(OCCUPIED_TABLES);
   document.getElementById("forwardButton").disabled = event.currentTarget.value === "";
+  document.getElementById("navigation-" + PAGE_IDS[1]).disabled = event.currentTarget.value === "";
+  document.getElementById("navigation-" + PAGE_IDS[2]).disabled = event.currentTarget.value === "";
 }
 
 function onBlurHandlerCustomerEmail(event) {
@@ -416,6 +428,23 @@ function onBlurHandlerCustomerEmail(event) {
     else {
       document.getElementById("forwardButton").disabled = false;
       event.currentTarget.setCustomValidity('');
+    }
+  }
+}
+
+function onClickHandlerNavigationMenu(event) {
+  for (const [i, p] of PAGE_IDS.entries()) {
+    if (event.currentTarget.id === "navigation-" + p) {
+      goToPage(i);
+      if (i === 0) document.getElementById("backButton").style.visibility = "hidden";
+      else document.getElementById("backButton").style.visibility = "visible";
+
+      if (!validateCustomerEmail() && p === "contactDetails") document.getElementById("forwardButton").disabled = true;
+      else document.getElementById("forwardButton").disabled = false;
+
+      if (i === PAGE_IDS.length - 2) document.getElementById("forwardButton").innerText = "Reservierung abschließen";
+      else document.getElementById("forwardButton").innerText = "Weiter";
+      break;
     }
   }
 }
