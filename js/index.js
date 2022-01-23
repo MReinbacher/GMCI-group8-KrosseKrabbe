@@ -102,9 +102,10 @@ function goToPage(page) {
   document.getElementById(PAGE_IDS[page]).style.display = "flex";
   document.getElementById("subtitle").innerText = PAGE_SUBTITLES[page];
   for (let p of PAGE_IDS) {
-    if (p != PAGE_IDS[3]) document.getElementById("navigation-" + p).classList.remove("active");
+    if (p != PAGE_IDS[PAGE_IDS.length - 1]) document.getElementById("navigation-" + p).classList.remove("active");
   }
-  document.getElementById("navigation-" + PAGE_IDS[page]).classList.add("active");
+  if (page != PAGE_IDS.length - 1) document.getElementById("navigation-" + PAGE_IDS[page]).classList.add("active");
+  else document.getElementById("navMenu").style.display = "none";
   currentPage = page;
 }
 
