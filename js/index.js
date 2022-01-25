@@ -1,6 +1,5 @@
 // Constants
 const PAGE_IDS = ["general", "menu", "contactDetails", "complete"];
-const PAGE_SUBTITLES = ["Reservierung", "Menü", "Kontaktdetails", "Reservierung abgeschlossen"];
 const FOOD = ["foodBurger", "foodPizza"];
 const FOOD_PRICE = { "foodBurger": 10, "foodPizza": 15 };
 const TABLES = {
@@ -121,7 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
 function goToPage(page, fromHistory = false) {
   document.getElementById(PAGE_IDS[currentPage]).style.display = "none";
   document.getElementById(PAGE_IDS[page]).style.display = "flex";
-  document.getElementById("subtitle").innerText = PAGE_SUBTITLES[page];
   for (let p of PAGE_IDS) {
     if (p != PAGE_IDS[PAGE_IDS.length - 1]) document.getElementById("navigation-" + p).classList.remove("active");
   }
