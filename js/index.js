@@ -87,8 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener('popstate', function (e) {
     let state = e.state;
-    console.log(history);
-    console.log(e.state);
     if (state !== null) {
       if (state.session !== null) {
         if (state.session === SESSION_ID) {
@@ -117,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var historyLength = -1 * history.length;
   history.go(historyLength);
   history.replaceState({ "previousPage": 0, "session": SESSION_ID }, null, "");
-  console.log(history);
 });
 
 // Functions
