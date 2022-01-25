@@ -411,6 +411,11 @@ input:invalid {
     border: 1px solid red !important;
 }
 
+.KK-button-group {
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
 .KK-button-group .KK-button {
     float: left;
     background-color: var(--main--color);
@@ -418,7 +423,7 @@ input:invalid {
     border-radius: 0px;
     color: white;
     box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
-    padding: 10px 25px;
+    padding: 5px 25px;
     margin: 0px;
     font-size: inherit;
     transition: .3s ease-in-out, visibility 0s;
