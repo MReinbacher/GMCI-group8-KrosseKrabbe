@@ -48,6 +48,7 @@ const EURO = "\u20AC"
 const OCCUPIED_TABLES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 // State variables
+let SESSION_ID
 let tables
 let currentPage = 0
 const shoppingCart = Object.create(null)
@@ -55,9 +56,10 @@ const shoppingCart = Object.create(null)
 
 //  do things on load
 document.addEventListener("DOMContentLoaded", function () {
+  SESSION_ID = createSessionID();
   addTables(document.getElementById('virtualRestaurant'));
 
-  // Elements
+  // Elementshistor
   tables = document.getElementsByClassName("table");
 
   // Events
@@ -83,21 +85,43 @@ document.addEventListener("DOMContentLoaded", function () {
   for (let p of PAGE_IDS) {
     if (p != PAGE_IDS[3]) document.getElementById("navigation-" + p).onclick = onClickHandlerNavigationMenu;
   }
+  window.addEventListener('popstate', function (e) {
+    let state = e.state;
+    console.log(history);
+    console.log(e.state);
+    if (state !== null) {
+      if (state.session !== null) {
+        if (state.session === SESSION_ID) {
+          if (currentPage === PAGE_IDS.length - 1) {
+            window.location.reload();
+          }
+          else {
+            goToPage(state.previousPage, true);
+          }
+        }
+        else {
+          history.back();
+        }
+      }
+    }
+  });
 
   // Initialization
   sliderValueOnInput();
-  goToPage(currentPage);
+  goToPage(currentPage, true);
   initShoppingCart();
   initPrices();
   document.getElementById("forwardButton").disabled = true;
   document.getElementById("navigation-" + PAGE_IDS[1]).disabled = true;
   document.getElementById("navigation-" + PAGE_IDS[2]).disabled = true;
-
-
+  var historyLength = -1 * history.length;
+  history.go(historyLength);
+  history.replaceState({ "previousPage": 0, "session": SESSION_ID }, null, "");
+  console.log(history);
 });
 
 // Functions
-function goToPage(page) {
+function goToPage(page, fromHistory = false) {
   document.getElementById(PAGE_IDS[currentPage]).style.display = "none";
   document.getElementById(PAGE_IDS[page]).style.display = "flex";
   document.getElementById("subtitle").innerText = PAGE_SUBTITLES[page];
@@ -105,8 +129,28 @@ function goToPage(page) {
     if (p != PAGE_IDS[PAGE_IDS.length - 1]) document.getElementById("navigation-" + p).classList.remove("active");
   }
   if (page != PAGE_IDS.length - 1) document.getElementById("navigation-" + PAGE_IDS[page]).classList.add("active");
-  else document.getElementById("navMenu").style.display = "none";
+  document.getElementById("forwardButton").innerText = "Weiter";
+  document.getElementById("forwardButton").disabled = document.getElementById("reservationTime").value === "";
+  document.getElementById("backButton").style.visibility = "visible";
+  switch (page) {
+    case 0:
+      document.getElementById("backButton").style.visibility = "hidden";
+      break;
+    case 1:
+      break;
+    case 2:
+      document.getElementById("forwardButton").innerText = "Reservierung abschließen"
+      if (!validateCustomerEmail()) document.getElementById("forwardButton").disabled = true;
+      break;
+    case 3:
+      document.getElementById("backButton").style.visibility = "hidden";
+      document.getElementById("forwardButton").style.visibility = "hidden";
+      customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value;
+      document.getElementById("navMenu").style.display = "none";
+      break;
+  }
   currentPage = page;
+  if (!fromHistory) history.pushState({ "previousPage": currentPage, "session": SESSION_ID }, null, "");
 }
 
 /**
@@ -322,6 +366,10 @@ function validateCustomerEmail() {
   );
 }
 
+function createSessionID() {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
+
 // Event functions
 function sliderValueOnInput(event) {
   var personNumberValue = document.getElementById("personNumberValue");
@@ -371,30 +419,8 @@ function onClickHandlerTable(event) {
 
 function onClickHandlerNavigation(event) {
   let nextPage;
-  if (event.currentTarget.id === "forwardButton") {
-    nextPage = currentPage + 1;
-    if (nextPage >= PAGE_IDS.length - 1) {
-      event.currentTarget.style.visibility = "hidden";
-      document.getElementById("backButton").style.visibility = "hidden";
-      customerEmailConfirmPage.innerText = document.getElementById("customerEmail").value; // ???
-    } else {
-      if (nextPage >= PAGE_IDS.length - 2) {
-        if (!validateCustomerEmail()) event.currentTarget.disabled = true;
-        event.currentTarget.innerText = "Reservierung abschließen";
-      }
-      // document.getElementById("backButton").disabled = false;
-      document.getElementById("backButton").style.visibility = "visible";
-    }
-  } else {
-    nextPage = currentPage - 1;
-    if (nextPage <= 0) {
-      // event.currentTarget.disabled = true;
-      event.currentTarget.style.visibility = "hidden";
-    }
-    document.getElementById("forwardButton").disabled = false;
-    document.getElementById("forwardButton").innerText = "Weiter";
-  }
-  goToPage(nextPage);
+  if (event.currentTarget.id === "forwardButton") goToPage(currentPage + 1);
+  else goToPage(currentPage - 1);
 }
 
 function onClickHandlerMenuButton(foodId, amount) {
@@ -437,14 +463,6 @@ function onClickHandlerNavigationMenu(event) {
   for (const [i, p] of PAGE_IDS.entries()) {
     if (event.currentTarget.id === "navigation-" + p) {
       goToPage(i);
-      if (i === 0) document.getElementById("backButton").style.visibility = "hidden";
-      else document.getElementById("backButton").style.visibility = "visible";
-
-      if (!validateCustomerEmail() && p === "contactDetails") document.getElementById("forwardButton").disabled = true;
-      else document.getElementById("forwardButton").disabled = false;
-
-      if (i === PAGE_IDS.length - 2) document.getElementById("forwardButton").innerText = "Reservierung abschließen";
-      else document.getElementById("forwardButton").innerText = "Weiter";
       break;
     }
   }
